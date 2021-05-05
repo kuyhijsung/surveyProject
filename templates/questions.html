@@ -1,14 +1,16 @@
 {% extends 'base.html' %}
 
-{% block title %}Questions{% endblock %}
-
 {% block content %}
 <h1>{{firstQ}}</h1>
-<input type="radio" id="firstChoice" name="choices" checked>
-<label for="firstChoice">{{choiceOne}}</label>
-<input type="radio" id="secondChoice" name="choices">
-<label for="secondChoice">{{choiceTwo}}</label>
-<div>
-    <a href="{{index}}"><button>Next</button></a>
-</div>
+<form action="/answers" method="POST">
+    <input type="radio" id="firstChoice" name="choices" checked>
+    <label for="firstChoice">{{choiceOne}}</label>
+    <input type="radio" id="secondChoice" name="choices">
+    <label for="secondChoice">{{choiceTwo}}</label>
+    <div>
+        <button>Next</button>
+    </div>
+</form>
+
+
 {% endblock %}
